@@ -1,121 +1,41 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { Scene } from './components/Scene'
+import { ConfigPanel } from './components/ConfigPanel'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="relative h-dvh w-full overflow-hidden bg-[#0b0b0f] text-neutral-100 select-none">
+      <Scene />
 
-      <div className="ticks"></div>
+      <ConfigPanel />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      {/* 顶部品牌区 */}
+      <header className="pointer-events-none absolute top-0 left-0 w-full p-6 md:p-8">
+        <p className="text-[10px] tracking-[0.35em] text-neutral-500 uppercase">
+          Product Forge
+        </p>
+        <h1 className="mt-2 text-2xl font-medium tracking-tight md:text-3xl">
+          FORGE ONE
+        </h1>
+        <p className="mt-1 text-sm text-neutral-400">
+          低帮球鞋 · 概念配色
+        </p>
+      </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* 右上角阶段标记 */}
+      <div className="pointer-events-none absolute top-6 right-6 md:top-8 md:right-8 text-right">
+        <p className="text-[10px] tracking-[0.25em] text-neutral-500 uppercase">
+          Stage 02
+        </p>
+        <p className="mt-1 text-[11px] text-neutral-500">3D Viewer</p>
+      </div>
+
+      {/* 底部操作提示 */}
+      <footer className="pointer-events-none absolute bottom-0 left-0 hidden w-full p-6 md:block md:p-8">
+        <p className="text-[11px] tracking-wide text-neutral-500">
+          拖拽旋转 · 滚轮缩放 · 静止 3 秒后自动旋转
+        </p>
+      </footer>
+    </div>
   )
 }
 
